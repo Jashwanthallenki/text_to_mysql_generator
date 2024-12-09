@@ -6,10 +6,6 @@ connection = sqlite3.connect("orders.db")
 
 cursor = connection.cursor()
 
-
-
-
-
 cursor.execute("CREATE TABLE ecom(OrderID INT,CustomerID INT,OrderCreatedDateTime DATE,OrderValue INT,OrderStatus VARCHAR(20),RefundStatus VARCHAR(20),SellerName VARCHAR(20));")
 
 def generate_random_order():
@@ -34,7 +30,6 @@ data = cursor.execute('''select * from ecom''')
 
 for row in data:
     print(row)
-
     
 connection.commit()
 connection.close()
